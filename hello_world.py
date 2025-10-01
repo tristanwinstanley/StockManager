@@ -1,3 +1,3 @@
 if __name__ == '__main__':
-    print("Hello Worldtest!")
-    print("all good")
+    print("i am in test now!")
+    print("all good 123")
