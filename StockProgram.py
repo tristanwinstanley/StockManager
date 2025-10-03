@@ -1,4 +1,6 @@
-﻿class StockManager:
+﻿# Simple programme qui permet de gerer un stock de produits
+# Vous pouvez voir le stock, ajouter ou supprimer des produits
+class StockManager:
     def __init__(self):
         self.__stock = {}
 
@@ -6,10 +8,10 @@
         print(f"Voici votre stock: \n {self.__stock}")
     
     def ajouterAuStock(self, nomDuProduit, quantite):
-        if nomDuProduit in self.__stock:
+        if nomDuProduit in self.__stock: # produit existant
             self.__stock[nomDuProduit] = self.__stock[nomDuProduit] + int(quantite) 
-        else:
-            self.__stock[nomDuProduit] = int(quantite) 
+        else: # nouveau produit
+            self.__stock[nomDuProduit] = int(quantite)
         print(f"{quantite} {nomDuProduit} ont ete ajoutes au stock")
 
     def supprimerDuStock(self, nomDuProduit, quantite):
@@ -50,5 +52,10 @@ if __name__ == "__main__":
     while not quitterProgramme:
         print("\nListe des commandes possibles : 1 = Montrer stock, 2 = Ajouter un produit au stock, 3 = Supprimer un produit du stock, 4 = Quitter le programme \n")
         nouvelleCommande = input("\nQue voulez-vous faire ?\n")
+        try:
+            quitterProgramme = stockManager.executerCommande(nouvelleCommande)
+        except Exception as e:
+            print(f"Une erreur est survenue : {repr(e)}")
+            print()
+            print("Veuillez reessayer")
         
-        quitterProgramme = stockManager.executerCommande(nouvelleCommande)
