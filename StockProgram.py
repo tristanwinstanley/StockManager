@@ -1,5 +1,6 @@
 ﻿# Simple programme qui permet de gerer un stock de produits
 # Vous pouvez voir le stock, ajouter ou supprimer des produits
+
 class StockManager:
     def __init__(self):
         self.__stock = {}
