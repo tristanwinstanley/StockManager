@@ -1,6 +1,3 @@
-# Simple programme qui permet de gerer un stock de produits
-# Vous pouvez voir le stock, ajouter ou supprimer des produits
-
 if __name__ == "__main__":
     print("Logiciel de stock démarré !")
     finish = False
